@@ -4,7 +4,14 @@ const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 
 // getting already existing users from local storage
-const users = JSON.parse(localStorage.getItem("users")) ?? [];
+
+const users = JSON.parse(localStorage.getItem("users")) ?? [{
+  id: 0,
+  username: "ny.serge",
+  email: "lillserg7@gmail.com",
+  password: "myPassword",
+}]
+
 let isGenuine = localStorage.getItem("isGenuine", "true");
 
 
@@ -20,6 +27,7 @@ function login(e) {
 
   if (user.id != 0 && user.username != "ny.serge" && user.email != "lillserg7@gmail.com" && user.password != "myPassword") {
     location.href = "index.html"
+    localStorage.setItem("signedin", user.username)
   } else {
     location.href = "dashboard.html"
   }
