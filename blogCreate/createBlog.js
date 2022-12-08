@@ -74,7 +74,6 @@ form.addEventListener('submit', e => {
   e.preventDefault();
 
 
-
   if(validateInputs() == true) {
     const article = {
       // id: crypto.randomUUID(),

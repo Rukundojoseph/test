@@ -133,3 +133,18 @@ nav ul li a {
 .box2-text {
   color: #C9C9C9;
 }
+#comment_div{
+  width: 80%;
+  margin:auto;
+  
+  color: white;
+  margin-top: none;  
+}
+.comment{
+  font-size: 2vw;
+  background-color: #424242;
+
+}
+#nlikes{
+  color: white;
+}

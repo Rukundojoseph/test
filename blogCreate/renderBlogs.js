@@ -22,6 +22,14 @@ articlesData.forEach((item, index) => {
 
     `
   )
+var coms=document.querySelector("#admincoments")
+let comments= loadcomments(item.id)
+comments.forEach(element => {
+  coms.innerHTML+=`<tr><td>${element.user}</td><td>${element.comment}</td><td>${element.blogid}</td></td>`  
+});
+
+
+
 })
 
 
@@ -56,5 +64,17 @@ var com={
 comments.push(com)
 var newcomments= JSON.stringify(comments)
 localStorage.setItem("comments", newcomments)
+
+}
+
+function loadcomments(id){
+  var comments =  JSON.parse(localStorage.getItem("comments")) || []
+  var blogcomments=[] 
+  comments.forEach(element => {
+    if (element.blogid==id){
+      blogcomments.push(element)
+    }    
+  });
+ return blogcomments
 
 }
